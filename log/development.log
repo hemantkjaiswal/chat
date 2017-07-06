@@ -1522,3 +1522,498 @@ Processing by Devise::RegistrationsController#edit as HTML
 Completed 200 OK in 70ms (Views: 67.1ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-05 23:33:50 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 911ms (Views: 880.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-05 23:33:54 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 160ms (Views: 116.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-05 23:33:57 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WZqHo9OpRbBG5PMYgsF+Y+0OzTGBRgCCvFbJ01N/DS2g20Nwyo+PgleDQYUyrlkr/1XNsWawHbTE7AGRCEN/yw==", "user"=>{"email"=>"kumarhemant144@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "kumarhemant144@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-07-05 18:03:57.707048"], ["last_sign_in_at", "2017-07-05 13:20:47.560524"], ["sign_in_count", 5], ["updated_at", "2017-07-05 18:03:57.712977"], ["id", 3]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 259ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-05 23:33:57 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 232ms (Views: 226.4ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-07-05 23:34:02 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YH2qycrKIUi6YrdjjuydmXAw++OobL9l+GACBpGyag+FrrdlvLDPxunGslyBUoTzCohK9dOxTP8D+3ADlcC+fg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-05 23:34:02 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 144ms (Views: 140.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-07-05 23:34:05 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 92ms (Views: 90.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-05 23:34:08 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 83ms (Views: 80.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-05 23:34:10 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lYYVrXAEfdGeZQPCf8ahwQd2yjh7Zve8iYLiQd+FmyxRNNvU6oBM7steXZFOAV/mXfowtZkQJcwkz38iheYH8w==", "user"=>{"email"=>"kumarhemant144@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "kumarhemant144@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-07-05 18:04:10.344774"], ["last_sign_in_at", "2017-07-05 18:03:57.707048"], ["sign_in_count", 6], ["updated_at", "2017-07-05 18:04:10.347317"], ["id", 3]]
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 212ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-05 23:34:10 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 151ms (Views: 147.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2017-07-05 23:34:14 +0530
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.6ms)
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 105ms (Views: 99.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-05 23:34:17 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.9ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 102ms (Views: 94.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-05 23:52:26 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 116ms (Views: 107.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-05 23:52:29 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 95ms (Views: 92.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/chatrooms/new" for 127.0.0.1 at 2017-07-05 23:52:31 +0530
+Processing by ChatroomsController#new as HTML
+  Rendering chatrooms/new.html.erb within layouts/application
+  Rendered chatrooms/_form.html.erb (3.8ms)
+  Rendered chatrooms/new.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 71ms (Views: 65.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chatrooms/new" for 127.0.0.1 at 2017-07-05 23:52:33 +0530
+Processing by ChatroomsController#new as HTML
+  Rendering chatrooms/new.html.erb within layouts/application
+  Rendered chatrooms/_form.html.erb (4.4ms)
+  Rendered chatrooms/new.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 103ms (Views: 98.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:52:40 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chatrooms/new" for 127.0.0.1 at 2017-07-05 23:52:41 +0530
+Processing by ChatroomsController#new as HTML
+  Rendering chatrooms/new.html.erb within layouts/application
+  Rendered chatrooms/_form.html.erb (3.2ms)
+  Rendered chatrooms/new.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/chatrooms" for 127.0.0.1 at 2017-07-05 23:52:46 +0530
+Processing by ChatroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sb5+XbW8wQOK8Rldzd5wUEymle8nKrXnCpHU/OTtN6XAZX9i0cLo7qxasNyBARJso1o7u7SqY/IhDq59Kq2nFQ==", "chatroom"=>{"name"=>"abc"}, "commit"=>"Create Chatroom"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "chatrooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "abc"], ["created_at", "2017-07-05 18:22:46.366670"], ["updated_at", "2017-07-05 18:22:46.366670"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/chatrooms/3
+Completed 302 Found in 21ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/chatrooms/3" for 127.0.0.1 at 2017-07-05 23:52:46 +0530
+Processing by ChatroomsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering chatrooms/show.html.erb within layouts/application
+  Rendered chatrooms/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 89ms (Views: 84.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:52:52 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 65ms (Views: 63.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/chatrooms/3/chatroom_users" for 127.0.0.1 at 2017-07-05 23:52:57 +0530
+Processing by ChatroomUsersController#create as HTML
+  Parameters: {"authenticity_token"=>"XG1P6UlAi3f+QrY+NCL161hGjN/V/oG4EVw+0jybA3LRNtS2OM1We5IkaLfbGk7y2kJcHho1oRh0l2XR92s6pg==", "chatroom_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.3ms)[0m  [1m[34mSELECT  "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ? ORDER BY "chatroom_users"."id" ASC LIMIT ?[0m  [["chatroom_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chatroom_users" ("chatroom_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["chatroom_id", 3], ["user_id", 3], ["created_at", "2017-07-05 18:22:57.704063"], ["updated_at", "2017-07-05 18:22:57.704063"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/chatrooms/3
+Completed 302 Found in 44ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/chatrooms/3" for 127.0.0.1 at 2017-07-05 23:52:57 +0530
+Processing by ChatroomsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering chatrooms/show.html.erb within layouts/application
+  Rendered chatrooms/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 89ms (Views: 85.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:53:00 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 70ms (Views: 68.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/chatrooms/3/chatroom_users" for 127.0.0.1 at 2017-07-05 23:53:03 +0530
+Processing by ChatroomUsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Ei3yS6wvTAzxQkPsLLGOxOgbxLiVmR60a/aOTGWBDjefdmkU3aKRAJ0knWXDiTXdah8UeVpSPhQOPdVPrnE34w==", "chatroom_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.3ms)[0m  [1m[34mSELECT  "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ? ORDER BY "chatroom_users"."id" ASC LIMIT ?[0m  [["chatroom_id", 3], ["user_id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/chatrooms/3
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/chatrooms/3" for 127.0.0.1 at 2017-07-05 23:53:03 +0530
+Processing by ChatroomsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering chatrooms/show.html.erb within layouts/application
+  Rendered chatrooms/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 65ms (Views: 61.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:53:05 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 64ms (Views: 62.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/chatrooms/new" for 127.0.0.1 at 2017-07-05 23:53:10 +0530
+Processing by ChatroomsController#new as HTML
+  Rendering chatrooms/new.html.erb within layouts/application
+  Rendered chatrooms/_form.html.erb (3.6ms)
+  Rendered chatrooms/new.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/chatrooms" for 127.0.0.1 at 2017-07-05 23:53:16 +0530
+Processing by ChatroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wKGRqgr2nd0baGT4dMN1pRl694Z7HL/2jQcHRE1ALTpJepCVboi0MD3DzXk4HBeZ9oZZ0uicaeOmmH3FgwC9ig==", "chatroom"=>{"name"=>"xyz"}, "commit"=>"Create Chatroom"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "chatrooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "xyz"], ["created_at", "2017-07-05 18:23:16.068627"], ["updated_at", "2017-07-05 18:23:16.068627"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/chatrooms/4
+Completed 302 Found in 10ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/chatrooms/4" for 127.0.0.1 at 2017-07-05 23:53:16 +0530
+Processing by ChatroomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering chatrooms/show.html.erb within layouts/application
+  Rendered chatrooms/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 69ms (Views: 65.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:53:17 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/chatrooms/4/chatroom_users" for 127.0.0.1 at 2017-07-05 23:53:19 +0530
+Processing by ChatroomUsersController#create as HTML
+  Parameters: {"authenticity_token"=>"1zArhWHE8x8LyLx9iwI7IqHJnVrRJgwAeCWfEiCMEZBaa7DaEEkuE2euYvRkOoA7I81Nmx7tLKAd7sQR63woRA==", "chatroom_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.3ms)[0m  [1m[34mSELECT  "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ? ORDER BY "chatroom_users"."id" ASC LIMIT ?[0m  [["chatroom_id", 4], ["user_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "chatroom_users" ("chatroom_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["chatroom_id", 4], ["user_id", 3], ["created_at", "2017-07-05 18:23:19.127282"], ["updated_at", "2017-07-05 18:23:19.127282"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/chatrooms/4
+Completed 302 Found in 22ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/chatrooms/4" for 127.0.0.1 at 2017-07-05 23:53:19 +0530
+Processing by ChatroomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering chatrooms/show.html.erb within layouts/application
+  Rendered chatrooms/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 89ms (Views: 85.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:53:22 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 74ms (Views: 71.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:53:24 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 72ms (Views: 68.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:57:38 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 136ms (Views: 126.5ms | ActiveRecord: 5.5ms)
+
+
+Started DELETE "/chatrooms/3/chatroom_users" for 127.0.0.1 at 2017-07-05 23:57:40 +0530
+Processing by ChatroomUsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s/UYHKAx4VpTfk0HTgrvt2Xpl+t7CdSUF7DPOhLlH2Q+roND0bw8Vj8Yk46hMlSu5+1HKrTC9DRye5Q52RUmsA==", "chatroom_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.2ms)[0m  [1m[34mSELECT "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ?[0m  [["chatroom_id", 3], ["user_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "chatroom_users" WHERE "chatroom_users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/chatroom_users_controller.rb:13:in `destroy'
+Started DELETE "/chatrooms/3/chatroom_users" for 127.0.0.1 at 2017-07-05 23:58:36 +0530
+Processing by ChatroomUsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s/UYHKAx4VpTfk0HTgrvt2Xpl+t7CdSUF7DPOhLlH2Q+roND0bw8Vj8Yk46hMlSu5+1HKrTC9DRye5Q52RUmsA==", "chatroom_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.3ms)[0m  [1m[34mSELECT "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ?[0m  [["chatroom_id", 3], ["user_id", 3]]
+Redirected to http://localhost:3000/chatrooms
+Completed 302 Found in 85ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:58:36 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 77ms (Views: 73.8ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/chatrooms/4/chatroom_users" for 127.0.0.1 at 2017-07-05 23:58:38 +0530
+Processing by ChatroomUsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4IS5ZXswSZ6jHHPHvWn/Qoy1n3ij+zD3HHbLJX58QBpt3yI6Cr2Uks96rU5SUURbDrFPuWwwEFd5vZAmtYx5zg==", "chatroom_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.6ms)[0m  [1m[34mSELECT "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ?[0m  [["chatroom_id", 4], ["user_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "chatroom_users" WHERE "chatroom_users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/chatrooms
+Completed 302 Found in 28ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:58:38 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 71ms (Views: 69.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/chatrooms/3/chatroom_users" for 127.0.0.1 at 2017-07-05 23:58:43 +0530
+Processing by ChatroomUsersController#create as HTML
+  Parameters: {"authenticity_token"=>"l3tiGPJeUd17dtBHuuPMymQ8X+TfCYdZEBqOd+pGPdYaIPlHg9OM0RcQDs5V23fT5jiPJRDCp/l10dV0IbYEAg==", "chatroom_id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.6ms)[0m  [1m[34mSELECT  "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ? ORDER BY "chatroom_users"."id" ASC LIMIT ?[0m  [["chatroom_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "chatroom_users" ("chatroom_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["chatroom_id", 3], ["user_id", 3], ["created_at", "2017-07-05 18:28:43.736686"], ["updated_at", "2017-07-05 18:28:43.736686"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/chatrooms/3
+Completed 302 Found in 23ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/chatrooms/3" for 127.0.0.1 at 2017-07-05 23:58:43 +0530
+Processing by ChatroomsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering chatrooms/show.html.erb within layouts/application
+  Rendered chatrooms/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:58:45 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 67ms (Views: 65.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/chatrooms/4/chatroom_users" for 127.0.0.1 at 2017-07-05 23:58:46 +0530
+Processing by ChatroomUsersController#create as HTML
+  Parameters: {"authenticity_token"=>"qDb7LQF5jKqLu34lSk3LohGXykAXtDPg40wwV7+5BcslbWBycPRRpufdoKyldXC7k5Magdh/E0CGh2tUdEk8Hw==", "chatroom_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mChatroomUser Load (0.2ms)[0m  [1m[34mSELECT  "chatroom_users".* FROM "chatroom_users" WHERE "chatroom_users"."chatroom_id" = ? AND "chatroom_users"."user_id" = ? ORDER BY "chatroom_users"."id" ASC LIMIT ?[0m  [["chatroom_id", 4], ["user_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "chatroom_users" ("chatroom_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["chatroom_id", 4], ["user_id", 3], ["created_at", "2017-07-05 18:28:46.742423"], ["updated_at", "2017-07-05 18:28:46.742423"]]
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/chatrooms/4
+Completed 302 Found in 36ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/chatrooms/4" for 127.0.0.1 at 2017-07-05 23:58:46 +0530
+Processing by ChatroomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering chatrooms/show.html.erb within layouts/application
+  Rendered chatrooms/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/chatrooms" for 127.0.0.1 at 2017-07-05 23:58:48 +0530
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 1.0ms)
+
+
