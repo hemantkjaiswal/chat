@@ -6,7 +6,6 @@ class ChatroomsController < ApplicationController
   def index
     @chatrooms = Chatroom.all
   end
-
   # GET /chatrooms/1
   # GET /chatrooms/1.json
   def show
